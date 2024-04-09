@@ -1,0 +1,20 @@
+1) create table panstwa(
+    -> id_panstwa int primary key,
+    -> panstwo char (50));
+   create table miasta(
+    -> id_miasta int,
+    -> miasto char (50),
+    -> id_panstwa int);
+2) insert into panstwa(1, 'Francja');
+   insert into panstwa(2, 'Polska');
+   insert into panstwa(3, 'Czechy');
+   insert into panstwa(4, 'Szwecja');
+   insert into miasta values(1, 'Warszawa', 2 );
+   insert into miasta values(2, 'Paryz', 1 );
+   insert into miasta values(3, 'Rybnik', 2 );
+3.1) select panstwa.id_panstwa, panstwa.panstwo, miasta.id_miasta,miasta.miasto,miasta.id_panstwa from panstwa, miasta;
+3.2) select panstwa.*, miasta.* from panstwa, miasta where panstwa.id_panstwa=miasta.id_panstwa;
+3.3) select miasta.miasto, panstwa.panstwo from miasta,panstwa where miasta.id_panstwa=panstwa.id_panstwa;
+4.1) select panstwa.*, miasta.* from miasta inner join panstwa;
+4.2) select panstwa.*, miasta.* from miasta inner join panstwa on panstwa.id_panstwa=miasta.id_miasta;
+4.3) select panstwo, miasto from miasta inner join panstwa on miasta.id_miasta=panstwa.id_panstwa;
