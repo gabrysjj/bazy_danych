@@ -1,0 +1,9 @@
+2) SELECT * FROM customergj WHERE customergj.town LIKE "h%";
+3) SELECT * FROM itemgj WHERE itemgj.cost_price IS NULL OR itemgj.sell_price is null;
+4a) SELECT * FROM customergj;
+4b) SELECT CONCAT(customergj.title," ", customergj.fname," ", customergj.lname," ", customergj.town," ", customergj.zipcode) FROM customergj;
+5) SELECT orderinfogj.orderinfoGJ_id, CONCAT(customergj.fname," ",customergj.lname), orderinfogj.date_placed, itemgj.description, orderlinegj.quantity FROM orderinfogj JOIN customergj ON orderinfogj.customerGJ_id = customergj.customerGJ_id JOIN orderlinegj ON orderinfogj.orderinfoGJ_id = orderlinegj.orderinfoGJ_id JOIN itemgj ON orderlinegj.itemGJ_id = itemgj.itemGJ_id ORDER BY orderinfogj.orderinfoGJ_id;
+6)
+7)
+8)
+9)
